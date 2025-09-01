@@ -1,0 +1,106 @@
+/* Fondo general */
+.login-body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f5f6f8; /* fallback claro */
+}
+
+/* Video siempre detrás */
+.video-background{
+  position: fixed;
+  inset: 0;
+  z-index: -1; /* detrás */
+  overflow: hidden;
+  background: #101114 url('poster.jpg') center/cover no-repeat;
+}
+.video-background video{
+  position: absolute;
+  top: 50%; left: 50%;
+  min-width: 100%; min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+.video-background .video-overlay{
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,.35);
+}
+
+/* Contenido */
+.auth-wrapper{
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+/* Formulario con fondo rojo claro detrás */
+.auth-card{
+  width: min(460px, 100%);
+  background: #fff;
+  position: relative;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.1);
+}
+.auth-card::before{
+  content:"";
+  position: absolute;
+  inset: -20px;
+  background: #fce4e4; /* rojo claro */
+  border-radius: 20px;
+  z-index: -1;
+}
+
+.auth-head{ text-align: center; margin-bottom: 16px; }
+.auth-logo{ width: 44px; height: 44px; margin-bottom: 8px; }
+.auth-head h1{ margin: 0 0 6px; font-size: 26px; }
+.auth-subtitle{ margin: 0 0 6px; color: #6b7280; font-size: 14px; }
+
+/* Inputs */
+.form-group{ margin-bottom: 14px; }
+.form-group label{ display:block; margin-bottom:6px; font-weight:600; font-size:14px; }
+.form-group input{
+  width: 100%; padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
+}
+.form-group input:focus-visible{
+  outline: none; border-color:#F01C24;
+  box-shadow: 0 0 0 3px rgba(240,28,36,.2);
+}
+.form-group.is-invalid input{ border-color:#ef4444; }
+.error-msg{ display:none; color:#b91c1c; font-size:13px; margin-top:4px; }
+.form-group.is-invalid .error-msg{ display:block; }
+
+/* Password con ojo */
+.password-field{ position: relative; }
+.password-field input{ padding-right: 42px; }
+.btn-eye{
+  position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+  border: 0; background: transparent; cursor: pointer; font-size: 18px;
+}
+
+/* Botón */
+.btn-enviar{
+  width: 100%; padding: 12px 18px;
+  border: none; border-radius: 999px;
+  background:#e73e0f; color:#fff;
+  font-size: 16px; font-weight:700;
+  cursor:pointer;
+}
+.btn-enviar:hover{ background:#F01C24; }
+
+/* Nota */
+.auth-note{ text-align:center; font-size:14px; margin-top: 12px; }
+
+/* Links */
+.auth-link{ color:#F01C24; text-decoration:none; }
+.auth-link:hover{ text-decoration:underline; }
+
+/* Fila recordarme */
+.auth-row{ display:flex; justify-content:space-between; align-items:center; margin:10px 0 16px; }
+.chk{ display:flex; align-items:center; gap:6px; font-size:14px; }
