@@ -1,1 +1,550 @@
-hgosmfgsdfm fadadmm
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clúster Industrial de Morón</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="logo.jpeg" type="image/x-icon">
+</head>
+
+<body>
+
+<div id="app-loader" aria-live="polite" aria-label="Cargando sitio">
+  <div class="loader-box">
+    <span class="loader-logo">CLÚSTER DE MORÓN</span>
+
+    <div class="loader-dots" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="loader-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <div class="loader-progress__bar"></div>
+    </div>
+
+    <p class="loader-text"><span id="loader-perc">0</span>% • Cargando…</p>
+  </div>
+</div>
+
+
+
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="#presentacion">
+        <img src="logo1.png" alt="Clúster Industrial de Morón" class="brand-mark" />
+        <span class="brand-text">CIM</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+
+      <nav id="main-nav" class="nav">
+        <a href="#presentacion" class="nav-link">Presentación</a>
+        <a href="#sectores" class="nav-link">Sectores</a>
+        <a href="#empresas" class="nav-link">Empresas</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+        <a href="login.html" class="btn-cta">Vinculate</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PRESENTACIÓN -->
+  <section id="presentacion" class="wrap-presentacion">
+  
+  
+    <!-- Video de fondo -->
+    <div class="video-background">
+      <video autoplay muted loop playsinline>
+        <source src="video de prueba.mp4" type="video/mp4">
+        <!-- Puedes agregar más formatos para compatibilidad -->
+      </video>
+      <div class="video-overlay"></div>
+    </div>
+  
+  
+    <div class="presen-grid">
+      <header class="presen-head">
+        <h2 class="reveal" data-delay="0">CLÚSTER INDUSTRIAL DE MORÓN</h2>
+        <div class="underline reveal" data-delay="100" aria-hidden="true"></div>
+
+        <p class="lead reveal" data-delay="200">
+          El Clúster Industrial de Morón es una alianza entre empresas con sólida trayectoria
+          que ofrece soluciones integrales al sector energético y minero. Desde uno de los polos
+          productivos más dinámicos de la Provincia de Buenos Aires, brindamos una oferta variada
+          de bienes y servicios estratégicos que responde a los más altos estándares de calidad.
+        </p>
+
+        <p class="lead reveal" data-delay="300">
+          Impulsamos la vinculación entre el sector privado, organismos públicos y el sistema
+          científico-tecnológico para fortalecer capacidades productivas e impulsar la innovación.
+          La cooperación incrementa productividad, competitividad y velocidad de respuesta.
+        </p>
+
+        <div class="cta-row reveal" data-delay="350">
+          <a href="#empresas" class="btn-primary">Conocé a las empresas</a>
+          <a href="#vinculate" class="btn-secondary">Vinculate</a>
+        </div>
+
+        <div class="stats reveal" data-delay="400" aria-label="Indicadores del clúster">
+          <div class="stat">
+            <span class="stat-num">+25</span>
+            <span class="stat-label">empresas</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">4</span>
+            <span class="stat-label">sectores</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">15+</span>
+            <span class="stat-label">años de experiencia</span>
+          </div>
+        </div>
+      </header>
+
+    </div>
+  </section>
+
+  <section id="quienes" class="wrap-about">
+  <div class="container">
+
+   <div class="reveal-animation ">
+      <h2 class="about-title">¿QUIÉNES SOMOS?</h2>
+      <p class="about-text">
+        El Clúster Industrial de Morón es una alianza entre empresas con sólida trayectoria
+        que ofrece soluciones integrales al sector energético y minero. Desde uno de los polos
+        productivos más dinámicos de la Provincia de Buenos Aires, brindamos una oferta variada
+        de bienes y servicios estratégicos que responde a los más altos estándares de calidad.
+        Impulsamos la vinculación entre el sector privado, organismos públicos y el sistema
+        científico-tecnológico para fortalecer nuestras capacidades productivas y promover la
+        innovación. La cooperación entre nuestras empresas incrementa la productividad,
+        mejora la competitividad y permite responder con rapidez, precisión y flexibilidad
+        a las demandas del mercado.
+      </p>
+   </div>
+
+    <div class="reveal-animation t">
+      <h2 class="about-title">MISIÓN</h2>
+      <p class="about-text">
+        Potenciar la competitividad de nuestras empresas mediante una oferta integrada,
+        innovadora y diversificada de bienes y servicios que cumpla con los estándares de la
+        industria energética y minera, garantizando soluciones a medida para cada cliente.
+      </p> 
+    </div>
+
+    <div class="reveal-animation ">
+      <h2 class="about-title">VISIÓN</h2>
+      <p class="about-text">
+        Ser un proveedor estratégico de referencia nacional para las cadenas de valor de
+        petróleo, gas y minería, articulando producción, tecnología y conocimiento en
+        soluciones industriales de alto impacto.
+      </p>
+    </div>
+
+    
+  </div>
+</section>
+
+
+<!-- EMPRESAS: SECTORES / GRID CON OVERLAY -->
+<section id="sectores" class="wrap-empresas">
+  <div class="container">
+    <header class="emp-head">
+      <h2 class="about-title">SECTORES</h2>
+      <p class="about-text">Explorá todos nuestros sectores.</p>
+    </header>
+
+    <div class="sectors-grid">
+      <!-- 1 -->
+      <a href="#empresas" class="sector-card" aria-label="Manufactura avanzada y mecanizada, ver empresas">
+        <img src="1.jpeg" alt="Manufactura avanzada y mecanizada" class="sector-img">
+        <div class="sector-overlay">
+          <h3 class="sector-title">Manufactura avanzada y mecanizada</h3>
+        
+        </div>
+      </a>
+
+      <!-- 2 -->
+      <a href="#empresas" class="sector-card" aria-label="Equipamiento industrial, ver empresas">
+        <img src="2.jpeg" alt="Equipamiento industrial" class="sector-img">
+        <div class="sector-overlay">
+          <h3 class="sector-title">Equipamiento industrial</h3>
+        
+        </div>
+      </a>
+
+      <!-- 3 -->
+      <a href="#empresas" class="sector-card" aria-label="Fluidos, lubricación y mantenimiento, ver empresas">
+        <img src="3.jpeg" alt="Fluidos, lubricación y mantenimiento" class="sector-img">
+        <div class="sector-overlay">
+          <h3 class="sector-title">Fluidos, lubricación y mantenimiento</h3>
+        
+        </div>
+      </a>
+
+      <!-- 4 -->
+      <a href="#empresas" class="sector-card" aria-label="Indumentaria y seguridad operativa, ver empresas">
+        <img src="4.jpeg" alt="Indumentaria y seguridad operativa" class="sector-img">
+        <div class="sector-overlay">
+          <h3 class="sector-title">Indumentaria y seguridad operativa</h3>
+          
+        </div>
+      </a>
+
+      <!-- 5 -->
+      <a href="#empresas" class="sector-card" aria-label="Movilidad y logística industrial, ver empresas">
+        <img src="5.jpeg" alt="Movilidad y logística industrial" class="sector-img">
+        <div class="sector-overlay">
+          <h3 class="sector-title">Movilidad y logística industrial</h3>
+          
+        </div>
+      </a>
+
+      <!-- 6 -->
+      <a href="#empresas" class="sector-card" aria-label="Iluminación y señalización, ver empresas">
+        <img src="6.jpeg" alt="Iluminación y señalización" class="sector-img">
+        <div class="sector-overlay">
+          <h3 class="sector-title">Iluminación y señalización</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- NUESTRAS EMPRESAS FILTRO BUSCADOR-->
+<section id="empresas" class="wrap-empresas">
+  <div class="container">
+    <header class="emp-head">
+      <h2 class="about-title">NUESTRAS EMPRESAS</h2>
+      <p class="about-text">Conocé a las empresas que forman parte del Clúster Industrial de Morón.</p>
+    </header>
+
+<!-- Filtros -->
+<div class="emp-controls">
+  <div class="search-wrap">
+    <input id="empSearch" type="search" placeholder="Buscar empresa o producto…">
+  </div>
+
+  <div class="controls-right">
+    <button class="clear-filters" id="clearFilters" aria-label="Limpiar búsqueda y filtros">×</button>
+  </div>
+</div>
+
+<!-- Chips de sectores -->
+<div class="chips">
+  <button class="filter-chip" data-sector="manufactura">Manufactura avanzada</button>
+  <button class="filter-chip" data-sector="equipamiento">Equipamiento industrial</button>
+  <button class="filter-chip" data-sector="fluidos">Fluidos y mantenimiento</button>
+  <button class="filter-chip" data-sector="indumentaria">Indumentaria y seguridad</button>
+  <button class="filter-chip" data-sector="logistica">Movilidad y logística</button>
+  <button class="filter-chip" data-sector="iluminacion">Iluminación y señalización</button>
+</div>
+
+<section class="seccion-empresas">
+  <div class="container">
+    <div id="empGrid" class="empresas-grid empresas-grid--logos"></div>
+  </div>
+</section>
+
+
+
+
+</section>
+<section class="apoyo">
+  <div class="wrap">
+    <h2 class="apoyo__title">APOYO INSTITUCIONAL</h2>
+
+    <ul class="apoyo-logos">
+      <li class="apoyo-card">
+        <img class="buenos-aires" src="Logomoronactual.png" alt="">
+      </li>
+      <li class="apoyo-card">
+         <img class="buenos-aires" src="beunos aires.jpg" alt="">
+      </li>
+      <!-- Si tenés más logos, copiá y pegá otra tarjeta aquí -->
+    </ul>
+  </div>
+</section>
+<section id="contacto" class="wrap-empresas">
+  <div class="container contacto-flex">
+    
+    <!-- Columna izquierda: Formulario -->
+    <div class="formulario-contacto">
+      <header class="emp-head">
+        <h2 class="about-title">CONTACTO</h2>
+        <p>Contactate con nosotros, resolvemos cualquiera de tus dudas</p>
+      </header>
+      
+      <form>
+        <div class="form-group">
+          <label for="empresa">Empresa / Institución</label>
+          <input type="text" id="empresa" name="empresa" required>
+        </div>
+
+        <div class="form-group">
+          <label for="nombre">Nombre y Apellido</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" required inputmode="tel" autocomplete="tel">
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-enviar">Enviar</button>
+      </form>
+    </div>
+
+    <!-- Columna derecha: Google Maps -->
+    <div class="mapa-contacto">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.747851639664!2d-58.623611!3d-34.646398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc753a6e53ecf%3A0x9a36437c4f1b0c97!2sMor%C3%B3n%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1692024000000!5m2!1ses!2sar" 
+        width="100%" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+  </div>
+</section>
+
+<section id="contacto" class="info-contacto">
+  <div class="container"> 
+    
+  </div>
+
+</section>
+
+
+  <script src="script.js"></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const header = document.querySelector('.emp-head');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animated');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.5 // Se activa cuando el 50% del elemento es visible
+  });
+
+  observer.observe(header);
+});
+</script>
+
+
+
+
+
+<script>
+(function(){
+  const grid   = document.querySelector('.empresas-grid');
+  if(!grid) return;
+
+  const cards  = Array.from(grid.querySelectorAll('.empresa-card'));
+  const chips  = Array.from(document.querySelectorAll('.chips .filter-chip'));
+  const clear  = document.getElementById('clearFilters');
+  const input  = document.getElementById('empSearch');
+
+  function applyFilter(){
+    const activeChip = document.querySelector('.chips .filter-chip.is-active');
+    const sector = activeChip ? activeChip.dataset.sector : 'all';
+    const q = (input?.value || '').trim().toLowerCase();
+
+    cards.forEach(card => {
+      const cSec = card.dataset.sector;
+      const name = (card.dataset.name || '').toLowerCase();
+      const tags = (card.dataset.tags || '').toLowerCase();
+      const sectorOk = (sector === 'all') || (cSec === sector);
+      const textOk   = !q || name.includes(q) || tags.includes(q);
+      card.style.display = (sectorOk && textOk) ? '' : 'none';
+    });
+  }
+
+  // Chips de sectores
+  chips.forEach(ch => {
+    ch.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('is-active'));
+      ch.classList.add('is-active');
+      applyFilter();
+    });
+  });
+
+  // Botón “X” limpiar todo
+  clear?.addEventListener('click', () => {
+    input.value = '';
+    chips.forEach(c => c.classList.remove('is-active'));
+    applyFilter();
+  });
+
+  // Búsqueda
+  input?.addEventListener('input', applyFilter);
+
+  applyFilter();
+})();
+</script>
+
+<script>
+// === 1) Definir sectores canónicos (los 6 que usás en chips) ===
+const SECTORES = {
+  manufactura: "Manufactura avanzada y mecanizada",
+  equipamiento: "Equipamiento industrial",
+  fluidos: "Fluidos, lubricación y mantenimiento",
+  indumentaria: "Indumentaria y seguridad operativa",
+  logistica: "Movilidad y logística industrial",
+  iluminacion: "Iluminación y señalización",
+};
+
+// Normalizador: mapea textos variados del array a un key canónico
+function normalizarSector(texto) {
+  const t = (texto || "").toLowerCase();
+
+  // Manufactura
+  if (t.includes("manufactura")) return "manufactura";
+  if (t.includes("mecanizada")) return "manufactura";
+  if (t.includes("tratamiento")) return "manufactura"; // <- si querés otro destino, cambiá acá
+
+  // Equipamiento
+  if (t.includes("equipamiento")) return "equipamiento";
+  if (t.includes("bienes de capital")) return "equipamiento";
+
+  // Fluidos / lubricación
+  if (t.includes("fluido") || t.includes("lubric") || t.includes("mantenimiento"))
+    return "fluidos";
+
+  // Indumentaria / seguridad
+  if (t.includes("indumentaria") || t.includes("seguridad"))
+    return "indumentaria";
+
+  // Logística / movilidad
+  if (t.includes("logística") || t.includes("logistica") || t.includes("movilidad"))
+    return "logistica";
+
+  // Iluminación / señalización
+  if (t.includes("iluminación") || t.includes("iluminacion") || t.includes("señalización") || t.includes("senalizacion") || t.includes("técnica"))
+    return "iluminacion";
+
+  // fallback (si algo no matchea, las mostramos igual dentro de manufactura)
+  return "manufactura";
+}
+
+// === 2) Renderizador: genera la card de empresa ===
+function cardEmpresa(e) {
+  // Datos básicos y fallbacks
+  const sectorKey = normalizarSector(e.sector);
+  const sectorLabel = SECTORES[sectorKey] || e.sector || "";
+  const name = e.nombre || e.id;
+  const img = e.logo && e.logo.trim() ? e.logo.trim() : "meta.jpeg"; // reemplazá por imagen real si tenés
+  const sigla = (e.sigla || "").trim();
+
+  // Tags de búsqueda
+  const tags = [
+    ...(e.tags || []),
+    ...(e.productos || []),
+    sectorLabel,
+    name
+  ].join(" ");
+
+  // Badge opcional con sigla (si no hay logo real)
+  const siglaBadge = !e.logo && sigla
+    ? `<span class="emp-badge">${sigla}</span>`
+    : "";
+
+  return `
+    <div class="empresa-card"
+      data-sector="${sectorKey}"
+      data-name="${name.replace(/"/g,'&quot;')}"
+      data-tags="${tags.replace(/"/g,'&quot;')}">
+      <img src="${img}" alt="${name}" class="empresa-image">
+      ${siglaBadge}
+      <div class="overlay">
+        <h3 class="overlay-title">${name}</h3>
+        <p class="overlay-description">${sectorLabel}</p>
+      </div>
+    </div>
+  `;
+}
+
+// === 3) Inyectar las 24 al grid ===
+(function montarEmpresas(){
+  const grid = document.querySelector('.empresas-grid');
+  if(!grid) return;
+  grid.innerHTML = EMPRESAS.map(cardEmpresa).join('');
+})();
+</script>
+
+
+<script>
+(function () {
+  const loader = document.getElementById('app-loader');
+  const bar = document.querySelector('.loader-progress__bar');
+  const percLabel = document.getElementById('loader-perc');
+
+  const SHOW_MS = 1000;   // exactamente 1 segundo visible
+  const start = Date.now();
+
+  let target = 0;  // meta (0-100)
+  let shown = 0;   // valor suavizado
+
+  // Progreso simulado hasta 95% (se ve “vivo” durante ese segundo)
+  const estTimer = setInterval(() => { target = Math.min(95, target + 5); }, 90);
+
+  // Si el navegador termina antes, lo llevamos a 100 igualmente
+  window.addEventListener('load', () => { target = 100; });
+
+  // Animación suave de la barra y porcentaje
+  (function tick(){
+    shown += (target - shown) * 0.14;
+    const pct = Math.round(shown);
+    bar.style.width = pct + '%';
+    percLabel.textContent = pct;
+    requestAnimationFrame(tick);
+  })();
+
+  // Ocultar exactamente a 1s del inicio
+  setTimeout(() => {
+    clearInterval(estTimer);
+    target = 100;
+    document.body.classList.add('is-ready');
+    loader.classList.add('hidden');
+    setTimeout(() => loader.remove(), 550);
+  }, SHOW_MS);
+})();
+</script>
+
+
+
+
+</body>
+
+
+<script>
+  if (!('open' in document.createElement('details'))) {
+    document.write('<script src="https://cdn.jsdelivr.net/npm/details-polyfill@1.2.4/dist/details-polyfill.min.js"><\/script>');
+  }
+</script>
+
+</html>
