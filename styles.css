@@ -1330,3 +1330,22 @@ body.is-ready main, body.is-ready header, body.is-ready footer{ opacity:1; trans
 @media (max-width: 560px){
   .empresas-grid--logos{ grid-template-columns: repeat(2, 1fr); }
 }
+
+
+/* Footer */
+.site-footer {
+    background: #000;
+    padding: 30px 0;
+    text-align: center;
+}
+.site-footer .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.site-footer .copyright {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.5;
+}
