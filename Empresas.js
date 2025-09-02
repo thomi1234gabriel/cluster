@@ -12,7 +12,7 @@ class Empresa {
     this.actividadPrincipal = actividadPrincipal;
     this.productos = productos;
     this.categoria = categoria; // Nueva propiedad añadida
-  }
+  } 
 }
 
 const Empresas = [];
@@ -680,3 +680,4 @@ const YACO = new Empresa(
 );
 
 Empresas.push(YACO);
+

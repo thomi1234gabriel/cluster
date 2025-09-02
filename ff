@@ -1,0 +1,212 @@
+// Este script debe estar en un archivo llamado script.js
+// y debe ser llamado en tu HTML después de Empresas.js.
+
+// ====== Lógica de navegación, scroll y animación de revelado ======
+const btn = document.querySelector('.nav-toggle');
+const nav = document.getElementById('main-nav');
+
+// Alterna la clase 'open' para mostrar/ocultar el menú
+btn.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+
+// Cierra el menú si se hace clic fuera de él
+document.addEventListener('click', (e) => {
+  if (!nav.contains(e.target) && !btn.contains(e.target)) {
+    if (nav.classList.contains('open')) {
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  }
+});
+
+// Observador para animar elementos con la clase 'reveal' al entrar en el viewport
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const delay = Number(el.dataset.delay || 0);
+      setTimeout(() => el.classList.add('in'), delay);
+      observer.unobserve(el);
+    }
+  });
+}, { threshold: 0.2 });
+document.querySelectorAll('#presentacion .reveal').forEach(el => observer.observe(el));
+
+// ScrollSpy: resalta el enlace de navegación activo al hacer scroll
+const map = { presentacion: 'Presentación', empresas: 'Empresas', sectores: 'Sectores', contacto: 'Contacto', vinculate: 'Vinculate' };
+const links = [...document.querySelectorAll('.nav a')];
+const spy = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const id = entry.target.id;
+    if (entry.isIntersecting && map[id]) {
+      links.forEach(l => l.classList.remove('active'));
+      const current = links.find(l => l.textContent.trim() === map[id]);
+      if (current) {
+        current.classList.add('active');
+      }
+    }
+  });
+}, { threshold: 0.6 });
+Object.keys(map).forEach(id => {
+  const sec = document.getElementById(id);
+  if (sec) spy.observe(sec);
+});
+
+// ====== Animaciones al cargar la página ======
+document.addEventListener('DOMContentLoaded', function() {
+  // Lógica para la animación del encabezado
+  const header = document.querySelector('.emp-head');
+  const headerObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animated');
+        headerObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  headerObserver.observe(header);
+
+  // Lógica para las animaciones de 'misión y visión' y otras secciones
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animated');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal-animation').forEach(element => {
+    revealObserver.observe(element);
+  });
+});
+
+// Animación de tarjetas de sectores
+document.addEventListener('DOMContentLoaded', function() {
+  const sectorCards = document.querySelectorAll('.sector-card');
+  const sectorObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('animated');
+        }, index * 100);
+        sectorObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  sectorCards.forEach(card => sectorObserver.observe(card));
+});
+
+// Animación de la sección de empresas
+document.addEventListener('DOMContentLoaded', function() {
+  const section = document.querySelector('.wrap-empresas');
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+  sectionObserver.observe(section);
+});
+
+// ====== Lógica de filtrado y renderizado de empresas ======
+document.addEventListener('DOMContentLoaded', function() {
+  // === Definir sectores canónicos ===
+  const SECTORES = {
+    manufactura: "Manufactura avanzada y mecanizada",
+    equipamiento: "Equipamiento industrial",
+    fluidos: "Fluidos, lubricación y mantenimiento",
+    indumentaria: "Indumentaria y seguridad operativa",
+    logistica: "Movilidad y logística industrial",
+    iluminacion: "Iluminación y señalización",
+  };
+
+  // Normalizador de sectores usando la propiedad 'categoria'
+  function normalizarSector(texto) {
+    const t = (texto || "").toLowerCase();
+    if (t.includes("manufactura") || t.includes("mecanizada") || t.includes("tratamiento")) return "manufactura";
+    if (t.includes("equipamiento") || t.includes("bienes de capital")) return "equipamiento";
+    if (t.includes("fluido") || t.includes("lubric") || t.includes("mantenimiento")) return "fluidos";
+    if (t.includes("indumentaria") || t.includes("seguridad")) return "indumentaria";
+    if (t.includes("logística") || t.includes("logistica") || t.includes("movilidad")) return "logistica";
+    if (t.includes("iluminación") || t.includes("iluminacion") || t.includes("señalización") || t.includes("senalizacion") || t.includes("técnica")) return "iluminacion";
+    return "manufactura"; // Fallback
+  }
+
+  // === Renderizador: genera la card de empresa ===
+  function cardEmpresa(e) {
+    const sectorKey = normalizarSector(e.categoria);
+    const sectorLabel = SECTORES[sectorKey] || e.categoria || "";
+    const name = e.nombreEmpresa || "";
+    const img = e.logoEmpresa && e.logoEmpresa.trim() ? e.logoEmpresa.trim() : "meta.jpeg";
+    const tags = [...(e.productos || []), sectorLabel, name].join(" ");
+
+    return `
+      <div class="empresa-card"
+        data-sector="${sectorKey}"
+        data-name="${name.replace(/"/g, '&quot;')}"
+        data-tags="${tags.replace(/"/g, '&quot;')}"
+        data-logo="${img}">
+        <img src="logos/${img}" alt="${name}" class="empresa-image">
+        <div class="overlay">
+          <h3 class="overlay-title">${name}</h3>
+          <p class="overlay-description">${sectorLabel}</p>
+        </div>
+      </div>
+    `;
+  }
+
+  // === Lógica de Renderizado y Filtros ===
+  const grid = document.querySelector('.empresas-grid');
+  if (!grid) return;
+
+  // Renderiza las tarjetas usando el array EMPRESAS
+  if (typeof EMPRESAS !== 'undefined' && EMPRESAS.length > 0) {
+    grid.innerHTML = EMPRESAS.map(cardEmpresa).join('');
+  } else {
+    console.error('El array EMPRESAS no está definido o está vacío.');
+    return;
+  }
+
+  // Luego, obtén las tarjetas y elementos de filtro del DOM
+  const cards = Array.from(grid.querySelectorAll('.empresa-card'));
+  const chips = Array.from(document.querySelectorAll('.chips .filter-chip'));
+  const clear = document.getElementById('clearFilters');
+  const input = document.getElementById('empSearch');
+
+  function applyFilter() {
+    const activeChip = document.querySelector('.chips .filter-chip.is-active');
+    const sector = activeChip ? activeChip.dataset.sector : 'all';
+    const q = (input?.value || '').trim().toLowerCase();
+
+    cards.forEach(card => {
+      const cSec = card.dataset.sector;
+      const name = (card.dataset.name || '').toLowerCase();
+      const tags = (card.dataset.tags || '').toLowerCase();
+      const sectorOk = (sector === 'all') || (cSec === sector);
+      const textOk = !q || name.includes(q) || tags.includes(q);
+      card.style.display = (sectorOk && textOk) ? '' : 'none';
+    });
+  }
+
+  chips.forEach(ch => {
+    ch.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('is-active'));
+      ch.classList.add('is-active');
+      applyFilter();
+    });
+  });
+
+  clear?.addEventListener('click', () => {
+    input.value = '';
+    chips.forEach(c => c.classList.remove('is-active'));
+    applyFilter();
+  });
+
+  input?.addEventListener('input', applyFilter);
+
+  applyFilter();
+});
